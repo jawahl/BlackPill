@@ -61,7 +61,7 @@ uint8_t AHT20_Init( AHT20 *dev, I2C_HandleTypeDef *i2cHandle ) {
 
 	/* Initialize the sensor */
 	uint8_t cmd[3];
-	cmd[0] = 0xBE;
+	cmd[0] = 0xBE; // Initialization Command
 	cmd[1] = 0x08;
 	cmd[2] = 0x00;
 	status = AHT20_Write( dev, cmd, 3 );
@@ -107,7 +107,8 @@ HAL_StatusTypeDef AHT20_ReadTempHum_Data( AHT20 *dev ) {
 	/* Read Sensor Data */
 	AHT20_Read( dev, devData, 6 );
 
-	/* devData = State, Hum1, Hum2, Hum3, Temp1, Temp2 */
+	/* devData = [State, Hum1, Hum2, Hum3/Temp1, Temp2, CRC]
+	 * Hum3 and Temp1 split byte 3 of device data */
 
 	/* Humidity Calculations */
 	humData = devData[1];

@@ -1,5 +1,5 @@
-AHT20.c:14:19:AHT20_Read	32	static
-AHT20.c:20:19:AHT20_Write	32	static
-AHT20.c:26:9:AHT20_GetStatus	24	static
-AHT20.c:36:9:AHT20_Init	24	static
-AHT20.c:67:19:AHT20_ReadTempHum_Data	40	static
+AHT20.c:16:19:AHT20_Read	32	static
+AHT20.c:24:19:AHT20_Write	32	static
+AHT20.c:32:9:AHT20_GetState	24	static
+AHT20.c:46:9:AHT20_Init	24	static
+AHT20.c:79:19:AHT20_ReadTempHum_Data	40	static

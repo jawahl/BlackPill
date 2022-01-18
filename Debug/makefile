@@ -65,8 +65,8 @@ all: main-build
 main-build: STM32F411CEU6_Test.elf secondary-outputs
 
 # Tool invocations
-STM32F411CEU6_Test.elf: $(OBJS) $(USER_OBJS) C:\Users\JWAHL\STM32CubeIDE\workspace_1.7.0\STM32F411CEU6_Test\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32F411CEU6_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\JWAHL\STM32CubeIDE\workspace_1.7.0\STM32F411CEU6_Test\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F411CEU6_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F411CEU6_Test.elf: $(OBJS) $(USER_OBJS) C:\Users\jawah\OneDrive\Documents\KiCAD\STM32F411CEU6_Test\BlackPill\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32F411CEU6_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\jawah\OneDrive\Documents\KiCAD\STM32F411CEU6_Test\BlackPill\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F411CEU6_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -46,7 +46,7 @@
 I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
-AHT20 thSensor;
+AHT20 thSensor; //Sensor struct
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
